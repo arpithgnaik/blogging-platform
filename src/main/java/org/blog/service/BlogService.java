@@ -22,6 +22,10 @@ public class BlogService {
         return repository.findById(id);
     }
 
+    public void deleteBlogById(Long id) {
+        repository.deleteById(id);
+    }
+
     public BlogModel saveBlog(BlogModel blog) {
         return repository.save(blog);
     }

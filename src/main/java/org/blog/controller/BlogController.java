@@ -27,6 +27,12 @@ public class BlogController {
         return ResponseEntity.ok(blogs.get());
     }
 
+    @DeleteMapping("/posts/{id}")
+    public ResponseEntity<Void> deleteBlogById(@PathVariable String id) {
+        service.deleteBlogById(Long.valueOf(id));
+        return ResponseEntity.ok().build();
+    }
+
     @PostMapping("/posts")
     public ResponseEntity<BlogModel> saveBlog(@RequestBody BlogModel blog) throws Exception {
         BlogModel blogModel = service.saveBlog(blog);
