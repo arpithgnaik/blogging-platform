@@ -83,6 +83,11 @@
             <artifactId>jboss-logging</artifactId>
             <version>3.6.1.Final</version>
         </dependency>
-
+        <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-rest-webmvc -->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-rest-webmvc</artifactId>
+            <version>4.3.4</version>
+        </dependency>
     </dependencies>
 </project>
