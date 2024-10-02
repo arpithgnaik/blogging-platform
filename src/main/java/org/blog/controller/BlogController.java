@@ -21,8 +21,12 @@ public class BlogController {
     private final BlogService service;
 
     @GetMapping("/posts")
-    public ResponseEntity<List<BlogModel>> getAllBlogs() {
-        List<BlogModel> blogs = service.getAllBlogs();
+    public ResponseEntity<List<BlogModel>> getAllBlogs(@RequestParam(value = "tech",required = false) String search) {
+        List<BlogModel> blogs;
+        if (search==null || search.isEmpty())
+            blogs = service.getAllBlogs();
+        else
+            blogs = service.searchBlogs(search);
         return ResponseEntity.ok(blogs);
     }
 
